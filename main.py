@@ -103,4 +103,3 @@ def add_trades(trades: List[Trade]):   # input : list of deals
     fake_trades.extend(trades)
     return {"status": 200, "data": fake_trades}
 
-
