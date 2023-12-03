@@ -39,3 +39,4 @@ def protected_route(user: User = Depends(current_user)):  # Depends(current_acti
 def unprotected_route():
     return f"Hello, anonym"
 
+

@@ -1,4 +1,5 @@
 from datetime import datetime
+
 from sqlalchemy import MetaData, Table, Column, Integer, String, TIMESTAMP, ForeignKey, JSON, Boolean
 from sqlalchemy.sql import roles
 
@@ -6,14 +7,17 @@ metadata = MetaData()
 
 role = Table(
     "role",
+
     metadata,
     Column("id", Integer, primary_key=True),
     Column("name", String, nullable=False),
     Column("permissions", JSON)
 )
 
+
 user = Table(
     "user",
+
     metadata,
     Column("id", Integer, primary_key=True),
     Column("email", String, nullable=False),
@@ -25,11 +29,3 @@ user = Table(
     Column("is_superuser", Boolean, nullable=False),
     Column("is_verified", Boolean,  nullable=False),
 )
-
-
-
-
-
-is_active: bool = Column(Boolean, default=True, nullable=False)
-is_superuser: bool = Column(Boolean, default=False, nullable=False)
-is_verified: bool = Column(Boolean, default=False, nullable=False)
