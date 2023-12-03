@@ -22,7 +22,7 @@ async def validation_exception_handler(request: Request, exc: ValidationError):
         content=jsonable_encoder({"detail": exc.errors()}),          # client will see error detail
     )
 
-
+8.1.1.1	pip install 'fastapi-users[sqlalchemy]'
 
 fake_users = [
     {"id": 1, "role": "admin", "name": "Bob"},
