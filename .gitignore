@@ -291,3 +291,5 @@ pyrightconfig.json
 *.docx
 
 **/__pycache__/
+
+*.tmp

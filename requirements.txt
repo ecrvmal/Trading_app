@@ -1,4 +1,4 @@
-﻿alembic==1.9.2
+alembic==1.9.2
 amqp==5.1.1
 anyio==3.6.2
 async-timeout==4.0.2
@@ -62,3 +62,4 @@ vine==5.0.0
 watchfiles==0.18.1
 wcwidth==0.2.6
 websockets==10.4
+
