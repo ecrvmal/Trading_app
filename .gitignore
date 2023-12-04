@@ -293,3 +293,6 @@ pyrightconfig.json
 **/__pycache__/
 
 *.tmp
+
+.idea/*
+
