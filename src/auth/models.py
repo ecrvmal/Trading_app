@@ -1,11 +1,11 @@
 from datetime import datetime
 
 from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTable
-from sqlalchemy import Table, Column, Integer, String, TIMESTAMP, ForeignKey, JSON, Boolean, MetaData
+from sqlalchemy import Table, Column, Integer, String, TIMESTAMP, ForeignKey, JSON, Boolean
 
-from database import Base
+from database import Base, metadata
 
-metadata = MetaData()
+
 
 role = Table(
     "role",
@@ -15,7 +15,7 @@ role = Table(
     Column("permissions", JSON),
 )
 
-user = Table(
+user = Table(                     # императивный метод
     "user",
     metadata,
     Column("id", Integer, primary_key=True),
@@ -29,7 +29,7 @@ user = Table(
     Column("is_verified", Boolean, default=False, nullable=False),
 )
 
-class User(SQLAlchemyBaseUserTable[int], Base):
+class User(SQLAlchemyBaseUserTable[int], Base):                      # декларативный метод
     id = Column(Integer, primary_key=True)
     email = Column(String, nullable=False)
     username = Column(String, nullable=False)
