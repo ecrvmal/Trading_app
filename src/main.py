@@ -11,6 +11,7 @@ from tasks.router import router as router_tasks
 from pages.router import router as router_pages
 from fastapi.staticfiles import StaticFiles
 
+
 app = FastAPI(
     title="Trading App"
 )
@@ -33,6 +34,7 @@ app.include_router(router_operation)
 app.include_router(router_tasks)
 app.include_router(router_pages)
 
+
 origins = [
     "http://localhost:3000",
 ]
@@ -41,6 +43,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
+
     # allow_methods=["*"]   # работает не всегда, нужно прописать методы вручную
     allow_methods=["GET", "POST", "OPTIONS", "DELETE", "PATCH", "PUT"],
     # allow_headers=["*"]   # работает не всегда, нужно прописать headers вручную
